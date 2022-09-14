@@ -2,8 +2,6 @@ package com.example.CrudApplication.controller;
 
 import java.util.List;
 
-import javax.websocket.server.PathParam;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -47,6 +45,10 @@ public class UserController {
 	
 	@DeleteMapping("/user/{id}")
 	public void deleteUser(@PathVariable("id") Integer id) {
+		userServiceImpl.deleteUser(id);
+	}
+	
+	public void rename(@PathVariable("id") Integer id) {
 		userServiceImpl.deleteUser(id);
 	}
 
